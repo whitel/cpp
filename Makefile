@@ -8,7 +8,7 @@ run:
 	./a.out
 	
 a.out: main.cpp
-	g++ main.cpp -o a.out
+	g++ main.cpp -o a.out -w
 
 clean:
 	rm a.out
