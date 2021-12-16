@@ -8,7 +8,7 @@ run:
 	./a.out
 	
 a.out: main.cpp
-	g++ main.cpp -o a.out -w
+	g++ main.cpp -o a.out -w -std=c++98 -pedantic
 
 clean:
 	rm a.out
