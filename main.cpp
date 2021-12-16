@@ -1,17 +1,11 @@
-#include <iostream>
-#include <string>
-using namespace std;
-
-class Student {
-	public:
-		void printThis();
-};
-
-void Student::printThis() {
-	cout << this << endl;
-}
+#include "student.h"
 
 int main(){
-	Student *p = new Student;
-	p->printThis();
+    Student *p = new Student;
+    p->name = "XiaoMing";
+    p->age = 16;
+    p->score = 99;
+    p->say();
+    delete p;
+    return 0;
 }

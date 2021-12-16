@@ -7,8 +7,8 @@ compile: a.out
 run:
 	./a.out
 	
-a.out: main.cpp
-	g++ main.cpp -o a.out -w -std=c++98 -pedantic
+a.out: main.cpp student.cpp student.h
+	g++ main.cpp student.cpp -o a.out -w -std=c++98 -pedantic
 
 clean:
 	rm a.out
