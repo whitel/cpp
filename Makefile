@@ -2,14 +2,17 @@
 
 all: compile run
 
-compile: a.out
+compile: lib/libstudent.so a.out
 
 run:
 	./a.out
 	
-a.out: main.cpp student.cpp student.h
-	g++ main.cpp student.cpp -o a.out -w -std=c++98 -pedantic
+lib/libstudent.so: src/student.cpp include/student.h
+	g++ src/student.cpp -fPIC -shared -o lib/libstudent.so -I./include
+
+a.out: main.cpp lib/libstudent.so
+	g++ main.cpp -I./include -L./lib -lstudent
 
 clean:
-	rm a.out
+	rm a.out lib/*
 
